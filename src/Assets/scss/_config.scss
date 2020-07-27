@@ -1,0 +1,46 @@
+// variables
+
+$black: #010000;
+$white: #FFFFFF;
+$oliveGreen: #62843C;
+$lightGrey: #e6e6e6;
+$darkGrey: #333;
+
+// mixins
+
+@mixin translateY($e) {
+    -webkit-transform: translateY($e);
+        -moz-transform: translateY($e);
+            transform: translateY($e);
+}
+
+@mixin transition($e) {
+    -webkit-transition: $e;
+    -moz-transition: $e;
+    transition: $e;
+}
+
+// fonts
+
+body {
+    font-family: 'Heebo';
+    font-size: 18px;
+    color: $black;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    @include transition(0.4s ease-in-out);
+    cursor: pointer;
+
+    &:hover {
+        color: $oliveGreen;
+        @include transition(.4s ease-in-out);
+    }
+}
+
+.container-fluid {
+    line-height: 24px;
+}

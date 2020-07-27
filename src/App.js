@@ -1,11 +1,31 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 import './Assets/css/default.min.css';
+
+// everything will be imported into this file, serves as connection from client to react end
+
+// importing components
+import Header from './components/headerComponent/header';
+import Footer from './components/footerComponent/footer';
+import Homepage from './components/pages/homepage';
+import Products from './components/pages/products';
 
 function App() {
   return (
-    <div className="App">
-      test
+    <Router>
+      <div className="App">
+      <Header />
+
+      <Route exact path='/' component={Homepage}/>
+      <Route exact path='/Products' component={Products}/>
+
+      <Footer />
     </div>
+    </Router>
   );
 }
 
